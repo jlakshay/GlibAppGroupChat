@@ -1,0 +1,112 @@
+   <!-- * By : Rumani Jain 
+     * Version : Spec 1.0   
+     * Date : 24 -October - 2017   -->  
+
+
+     <div id="hero" class="img-responsive">
+    <div class="hero-container"><!--starting of body-->
+      <div class="container">
+        <h3>{{errorMsg}}</h3><!--error message-->
+          <div class="row">
+            <h4>{{word.registerHeading}}</h4>
+            <a  routerLink= "/welcome" class="fa fa-home" id=home aria-hidden="true"> </a>
+            
+            <div class="input-group input-group-icon,form-group" id="input">
+              <!---Enter details-->
+             <!--  <input type="text" class="input-group input-group-icon,form-control" id="name" 
+              required
+              pattern="[a-zA-Z][a-zA-Z ]+"
+              name="fullname" 
+              [(ngModel)]="data.fullName" 
+              placeholder={{word.registerPlaceholder}}
+              #name="ngModel"/> -->
+               <input type="text" 
+                  name="name" 
+                  class="form-control" 
+                  placeholder="Enter your Name"
+                  [(ngModel)]="username" 
+                  value="{{username}}"
+                  (keyup)="onkeyup($event)"
+                  (keydown)="onkeydown($event)"
+                >
+                <br *ngIf="isuserNameAvailable && username!=''" />
+                <div *ngIf="isuserNameAvailable && username!=''" class="alert alert-danger">
+                  username <strong>{{username}}</strong> is already taken.
+                </div>
+            </div>
+
+
+          <div class="input-group input-group-icon,form-group">
+            <!-- <input type="email" class="form-control" id="emailaddress"
+            required
+            [(ngModel)]="data.email" name="email" 
+            placeholder={{word.adress}}
+            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+            #email="ngModel"/> -->
+             <input type="text" 
+                  name="email" 
+                  class="form-control" 
+                  placeholder="Enter your Email"
+                  [(ngModel)]="email" 
+                  value="{{email}}" 
+                >
+          </div>
+
+
+        <div class="input-group input-group-icon, form-group">
+         <!--  <input type="password"  class="form-control" id="password"
+          required
+          minlength="5"
+          [(ngModel)]="data.password" 
+          name="password" 
+          placeholder={{word.pp}}
+          #password="ngModel"/> -->
+           <input type="password" 
+                  name="password" 
+                  class="form-control" 
+                  placeholder="Enter your Password" 
+                  [(ngModel)]="password" 
+                  value="{{ password }}"
+                >
+        </div> 
+
+
+      <!-- <div class="input-group input-group-icon,form-group">
+        <input type="password" class="form-control" id="confirmPassword"
+        required
+        validateEqual="password"
+        [(ngModel)]="data.confirmPassword" name="confirm" 
+        placeholder={{word.cp}}
+        #confirmPassword="ngModel"/>
+      </div>
+
+    <div class="input-group input-group-icon,form-group">
+      <input type="text" class="form-control" id="mobilenumber"
+      required 
+      pattern="[0-9]*"
+      minlength="10"
+      maxlength="10" 
+      #mobile="ngModel"
+      [(ngModel)]="data.contact" name="contact" name="mobilenumber" placeholder={{word.number}}/>
+    </div>
+  <div class="input-group input-group-icon">
+    <input type="date" [(ngModel)]="data.dob" name="DOB" placeholder={{word.d}} class="form-control" max={{now}} #startdate="ngModel" [(ngModel)] = "dateInput"/>
+  </div>
+  <div class="input-group input-group-icon,form-group">
+        <input type="password" class="form-control" id="confirmPassword"
+        required
+        validateEqual="password"
+        [(ngModel)]="data.gender" name="confirm" 
+        placeholder={{word.gender}}
+        #confirmPassword="ngModel"/>
+      </div>
+</div> 
+     -->
+
+<div class="input-group">
+  <!--button-->
+  <button id="register" type="button" class="btn btn-outline-success, register" (click)="registerUser()"> <h6 class="registerButton" >{{word.rb}}</h6></button>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,396 @@
+<!--     <div *ngFor="let message of messages">
+      {{message}}
+    </div> -->
+   <body>
+  <div class="container-fluid" id="secondSec">
+  <div class="row bootstrap snippets">
+  <div class="col-md-12">
+
+      <!-- DIRECT CHAT WARNING -->
+
+      <div class=" direct-chat direct-chat-warning">
+
+    
+
+        <!-- /.box-header -->
+
+        <div class="box-body">
+
+          <!-- Conversations are loaded here -->
+
+          <div class="direct-chat-messages">
+
+            <!-- Message. Default to the left -->
+
+
+<div *ngFor="let message of allGeneralMessages">
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  grey   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --> 
+
+
+            <div class="container-fluid" *ngIf="message.username!==username">
+
+            <div class="row">
+
+            <div class="col-md-8">
+
+            <div class="direct-chat-msg">
+
+              <div class="direct-chat-info clearfix">
+
+                <span class="direct-chat-name pull-left">{{message.username}}</span>
+
+                <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
+
+              </div>
+
+              <!-- /.direct-chat-info -->
+
+              <img class="direct-chat-img" src="https://bootdey.com/img/Content/user_1.jpg" alt="Message User Image"><!-- /.direct-chat-img -->
+
+              <div class="direct-chat-text">
+
+                {{message.message}}
+
+              </div>
+
+              <!-- /.direct-chat-text -->
+
+            </div>
+
+            </div>
+
+            <!-- /.direct-chat-msg -->
+
+            <div class="col-md-4">
+
+            </div>
+
+            </div>
+
+            </div>
+
+            
+<!-- yellow xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+ 
+            <div class="container-fluid" *ngIf="message.username===username">
+
+            <div class="row">
+
+            <div class="col-md-4">
+
+            </div>
+
+            <!-- Message to the right -->
+
+            <div class="col-md-8">
+
+            <div class="direct-chat-msg right">
+
+              <div class="direct-chat-info clearfix">
+
+                <span class="direct-chat-name pull-right">{{message.username}}</span>
+
+                <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
+
+              </div>
+
+              <!-- /.direct-chat-info -->
+
+              <img class="direct-chat-img" src="https://bootdey.com/img/Content/user_2.jpg" alt="Message User Image"><!-- /.direct-chat-img -->
+
+              <div class="direct-chat-text">
+
+                {{message.message}}
+
+              </div>
+
+              <!-- /.direct-chat-text -->
+
+            </div>
+
+            </div>
+
+            <!-- /.direct-chat-msg -->
+
+            </div>
+
+            </div>
+
+        
+
+<!-- yellow xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->          
+</div>
+
+           <!-- Message. Default to the left -->
+
+            
+      
+
+
+
+
+
+           
+
+          </div>
+
+          <!--/.direct-chat-messages-->
+
+
+
+          <!-- /.direct-chat-pane -->
+
+        </div>
+
+        <!-- /.box-body -->
+
+        </div>
+
+        <div class="footer">
+
+        <div class="container-fluid">
+
+        <div class="row">
+
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-10">
+
+          <form action="#" method="post">
+
+            <div class="input-group container-fluid">
+
+            <!-- Default dropup button -->
+
+  <div class="btn-group dropup">
+
+    <button type="button" class="btn btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+      <i class="fa fa-plus" aria-hidden="true"></i>
+
+    </button>
+
+    <div class="dropdown-menu">
+
+    <a class="dropdown-item" href="#"><i class="fa fa-paperclip" aria-hidden="true"></i> Code Snippet</a>
+
+      <div class="dropdown-divider"></div>
+
+      <a class="dropdown-item" href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Your Computer</a>
+
+      <!-- Dropdown menu links -->
+
+    </div>
+
+  </div>
+
+  <button class="btn btn-secondary"><i class="fa fa-video-camera" aria-hidden="true"></i></button>
+
+            
+
+            
+
+              <input type="text" name="message" placeholder="Type Message ..." class="form-control" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()">
+
+                  <span class="input-group-btn">
+
+
+
+                    <button type="submit" class="btn btn-warning btn-flat" (click)="sendMessage()">Send</button>
+
+                  </span>
+
+            </div>
+
+          </form>
+
+          </div>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        <!-- /.box-footer-->
+
+      </div>
+
+
+
+
+
+      <!--/.direct-chat -->
+
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+
+
+
+
+   </body>
+
+
+
+   <!--  <div *ngIf="userfinal">
+
+      <h1>hiii {{userfinal}}</h1>
+    </div> -->
+  <!--  <div *ngFor="let user of serveruser">
+      <button  type="button" class="btn btn-primary">{{user}}</button>
+    </div> -->
+
+
+
+  <!-- 
+    <input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+    <button (click)="sendMessage()">Send</button> -->
+
+    <!-- <div>
+    <h4>enter username</h4>
+    <form>
+    <input [(ngModel)]="user"  type="text" name="username" placeholder="username" />
+    <button (click)="sendUserName()" type="submit">submit</button>
+    <button (click)="disconnectUser()" type="submit">Disconnect</button>
+    </form>
+    </div> -->
+
+    <!-- <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul>
+          <li class="dropdown-item" (click)=room(java)>Java</li>
+          <li class="dropdown-item" (click)=room(c)>c</li>
+        </ul>
+      </div>
+    </div> -->
+
+
+
+
+
+  <!-- <div *ngIf="userfinal">
+
+
+
+  <h1>hiii {{userfinal}}</h1>
+
+  </div>
+
+
+
+
+
+  <div *ngFor="let message of messages">
+
+     {{message}}
+
+  </div>
+
+
+
+
+
+  <div *ngFor="let user of serveruser">
+
+    <button  type="button" class="btn btn-primary">{{user}}</button>
+
+  </div> -->
+
+
+
+
+
+
+
+
+
+  <!-- <input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+
+  <button (click)="sendMessage()">Send</button>
+
+
+
+  <div>
+
+  <h4>enter username</h4>
+
+  <form>
+
+  <input [(ngModel)]="user"  type="text" name="username" placeholder="username" />
+
+  <button (click)="sendUserName()" type="submit">submit</button>
+
+  <button (click)="disconnectUser()" type="submit">Disconnect</button>
+
+  </form>
+
+  </div>
+
+   -->
+  <!-- 
+  <div class="dropdown">
+
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+     Dropdown button
+
+   </button>
+
+   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+   <ul>
+
+     <li class="dropdown-item" (click)=room(java)>Java</li>
+
+     <li class="dropdown-item" (click)=room(c)>c</li>
+
+     </ul>
+
+   </div>
+
+  </div>
+   -->
+
+
+
+
+  <!-- <div class="box-header with-border container" id="videoHead">
+
+          <h3 class="box-title">Kuldeep</h3> <i class="fa fa-circle" aria-hidden="true" id=fontAw></i>
+
+
+
+          <div class="box-tools pull-right">
+
+            <button type="button" class="btn btn-box-tool" data-widget="tooltip" title="Video Call"><i class="fa fa-video-camera" aria-hidden="true"></i>
+
+            </button>
+
+            <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle">
+
+              <i class="fa fa-comments"></i></button>
+
+          </div>
+
+        </div>
+
+   -->

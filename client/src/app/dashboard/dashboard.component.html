@@ -1,0 +1,94 @@
+
+
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top main" id="mainNav">
+		<a class="navbar-brand" href="index.html">GlibApp</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+
+
+			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+<a class="nav-link"> <!-- routerLink="/dashboard"
+-->            <!-- <i class=" fa fa-fw fa-dashboard"></i> -->
+<span class="nav-link-text" >Rumani Jain</span>
+</a>
+<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+<a class="nav-link"> <!-- routerLink="/dashboard"
+-->            <!-- <i class=" fa fa-fw fa-dashboard"></i> -->
+<span class="nav-link-text" >#General</span>
+</a>
+</li>
+<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+	<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+		<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+
+		<span class="nav-link-text">Channels</span>
+	</a>
+	<ul class="sidenav-second-level collapse" id="collapseComponents">
+		<li>
+
+			<a class="nav-link"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+				JAVA</a>
+			</li>
+			<li>
+				<a class="nav-link"><i class="fa fa-university" aria-hidden="true"></i>
+					C++</a>
+				</li>
+				<li>
+					<a class="nav-link"><i class="fa fa-university" aria-hidden="true"></i>
+						Javascript</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+<a class="nav-link"> <!-- routerLink="/dashboard"
+-->            <!-- <i class=" fa fa-fw fa-dashboard"></i> -->
+<span class="nav-link-text" >online users</span>
+</a>
+</li>
+<li *ngFor="let user of chatListUsers" 
+(click)="selectedUser(user)" 
+						[class.selected-user]="isUserSelected(user._id)"
+						>
+
+	<a class="nav-link"><i class="fa fa-user" aria-hidden="true"></i> {{ user.username}}  <i class="fa fa-circle" aria-hidden="true" id=fontAw></i>
+	</a>   
+</li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+</nav>
+
+
+
+<div class="content-wrapper">
+	<a class="scroll-to-top rounded" href="#page-top">
+		<i class="fa fa-angle-up"></i>
+	</a>
+
+	<router-outlet></router-outlet>
+
+	<script src="vendor/popper/popper.min.js"></script>  
+</div>
+
+</body>
+
+
+
+
+
+
+

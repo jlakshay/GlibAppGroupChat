@@ -1,0 +1,23 @@
+<!-- * By : Rumani Jain 
+     * Version : Spec 1.0   
+     * Date : 24 -October - 2017  
+ -->   
+<div id="hero" class="img-responsive">
+<div class="hero-container">
+  <div class="container">
+    <form>
+      <div class="row">
+        <h2 id="h1">Verification</h2>
+        <div>
+          <h3 id="otp">Enter the OTP</h3>
+        </div>
+        <div class="input-group input-group-icon">
+          <input type="email" [(ngModel)]="otp" name="email" placeholder="OTP"/>
+          <div class="input-icon"><i class="fa fa-envelope"></i></div>
+        </div>
+      </div> 
+      <button id="login" type="button" (click)=verify(otp) class="btn btn-outline-success" >Submit</button><br/>
+    </form>
+  </div>
+</div>
+</div>
